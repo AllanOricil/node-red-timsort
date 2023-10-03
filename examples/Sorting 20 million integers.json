@@ -1,0 +1,82 @@
+[
+  {
+    "id": "37f3bcebb1d4478f",
+    "type": "tab",
+    "label": "TimSort",
+    "disabled": false,
+    "info": "",
+    "env": []
+  },
+  {
+    "id": "ad04a9a0bc87d17f",
+    "type": "function",
+    "z": "37f3bcebb1d4478f",
+    "name": "Random Array",
+    "func": "var length = 20000000; //  ten millions;\nvar arr = [];\nfor (let i = length; i > 0; i--) {\n    arr.push(parseInt(Math.random() * 1000000000));\n}\nmsg.payload = arr\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 560,
+    "y": 340,
+    "wires": [["e1e2391bb4c63e53", "dc5940ca756644fa"]]
+  },
+  {
+    "id": "e1e2391bb4c63e53",
+    "type": "debug",
+    "z": "37f3bcebb1d4478f",
+    "name": "Original",
+    "active": false,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "payload",
+    "targetType": "msg",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 800,
+    "y": 400,
+    "wires": []
+  },
+  {
+    "id": "d89862e0fc7d3dfd",
+    "type": "debug",
+    "z": "37f3bcebb1d4478f",
+    "name": "Sorted",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "true",
+    "targetType": "full",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 970,
+    "y": 340,
+    "wires": []
+  },
+  {
+    "id": "d973854c50f0e024",
+    "type": "inject",
+    "z": "37f3bcebb1d4478f",
+    "name": "",
+    "props": [],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "x": 390,
+    "y": 340,
+    "wires": [["ad04a9a0bc87d17f"]]
+  },
+  {
+    "id": "dc5940ca756644fa",
+    "type": "timsort",
+    "z": "37f3bcebb1d4478f",
+    "x": 800,
+    "y": 340,
+    "wires": [["d89862e0fc7d3dfd"]]
+  }
+]
