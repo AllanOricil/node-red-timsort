@@ -1,11 +1,15 @@
 {
-  "name": "node-red-timsort",
+  "name": "@allanoricil/node-red-timsort",
   "version": "0.1.0",
   "description": "Faster sorting algorithm than Array.prototype.sort",
   "scripts": {
     "prepare": "husky install"
   },
+  "keywords": [
+    "node-red"
+  ],
   "node-red": {
+    "version": ">=3.0.0",
     "nodes": {
       "timsort": "timsort.js"
     }
