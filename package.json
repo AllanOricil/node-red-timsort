@@ -8,6 +8,9 @@
   "keywords": [
     "node-red"
   ],
+  "engines": {
+    "node": ">=16.20.1"
+  },
   "node-red": {
     "version": ">=3.0.0",
     "nodes": {
@@ -34,5 +37,8 @@
     "**/*.{js,jsx,ts,tsx,html,css,json}": [
       "yarn prettier --write"
     ]
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   }
 }
